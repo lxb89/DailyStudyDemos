@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
+
+    defaultConfig {
+        applicationId "angqin.myapplication"
+        minSdkVersion 18
+        targetSdkVersion 22 //为了兼容低版本，安装app 时默认打开权限
+        versionCode 1
+        versionName "1.0"
+
+//3.0  studio 上 butterknife 出错配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'org.greenrobot:eventbus:3.1.1'
+    //rxjava+retroft
+    compile 'io.reactivex:rxjava:1.1.0'
+    compile 'io.reactivex:rxandroid:1.1.0'//添加此依赖是因为rxjava中的线程问题
+    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
+    compile 'com.google.code.gson:gson:2.6.2'
+    //注解
+    compile 'com.jakewharton:butterknife:7.0.1'
+    //开源相册选择
+    compile 'com.yanzhenjie:album:2.1.0'
+    compile 'com.github.bumptech.glide:glide:3.8.0'
+    //GridLayout在Android 5.1(API Level 21)时引入了android:layout_columnWeight和android:layout_rowWeight来解决平分问题，但是API21前怎么办呢？
+    //兼容包
+    compile 'com.android.support:gridlayout-v7:22.+'
+
+
+}

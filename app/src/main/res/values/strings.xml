@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">EventBusDemo</string>
+    <string-array name="pageTiTles">
+        <item >Module 一</item>
+        <item >Module 二</item>
+        <item >Module 三</item>
+        <item >Module 四</item>
+        <item >Module 五</item>
+    </string-array>
+
+</resources>

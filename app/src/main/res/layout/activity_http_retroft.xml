@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/tv_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="@android:color/holo_blue_dark"
+        android:text="只用retroft请求网络"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"/>
+    <TextView
+        android:id="@+id/tv_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:padding="8dp"
+        android:background="@android:color/holo_blue_dark"
+        android:text="简单Retrofit和Rxjava的结合，请求网络"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"/>
+    <TextView
+        android:id="@+id/tv_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:padding="8dp"
+        android:background="@android:color/holo_blue_dark"
+        android:text="对创建retroft 过程封装，请求网络"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"/>
+    <TextView
+        android:id="@+id/tv_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:padding="8dp"
+        android:background="@android:color/holo_blue_dark"
+        android:text="相同格式的Http请求数据该如何封装"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"/>
+
+</LinearLayout>
