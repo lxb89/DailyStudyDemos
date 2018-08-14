@@ -1,6 +1,8 @@
 package angqin.myapplication;
 
 
+import org.litepal.LitePal;
+
 import java.util.Locale;
 
 import angqin.myapplication.album.Album;
@@ -19,6 +21,7 @@ public class Application extends android.app.Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        mGalobalConfig();
         if (instance == null) {
             instance = this;
             Album.initialize(AlbumConfig.newBuilder(this)
@@ -27,6 +30,14 @@ public class Application extends android.app.Application {
                     .build()
             );
         }
+    }
+
+    /**
+     * 全局配置
+     */
+    private void mGalobalConfig() {
+        LitePal.initialize(this);
+
     }
 
     public static Application getInstance() {

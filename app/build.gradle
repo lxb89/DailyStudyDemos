@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.0"
+    buildToolsVersion '26.0.2'
 
     defaultConfig {
         applicationId "angqin.myapplication"
@@ -46,6 +46,10 @@ dependencies {
     //GridLayout在Android 5.1(API Level 21)时引入了android:layout_columnWeight和android:layout_rowWeight来解决平分问题，但是API21前怎么办呢？
     //兼容包
     compile 'com.android.support:gridlayout-v7:22.+'
+    // LitePal 三方数据库
+    implementation 'org.litepal.android:core:2.0.0'
+
+
 
 
 }

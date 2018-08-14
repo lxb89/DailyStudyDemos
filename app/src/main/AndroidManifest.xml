@@ -157,6 +157,16 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/Album.AppTheme">
+<!--            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+        <!-- LitePal 数据库-->
+        <activity android:name=".litepal.LitePalStudyActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Album.AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
