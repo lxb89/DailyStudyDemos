@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import org.litepal.LitePal;
+import org.litepal.crud.callback.SaveCallback;
 import org.litepal.tablemanager.Connector;
 
 import java.util.List;
@@ -40,11 +41,11 @@ public class LitePalStudyActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.acb_create:
-//                Connector.getDatabase();   //创建数据库
-                Connector.getDatabase();
+                Connector.getDatabase();   //创建数据库
                 break;
             case R.id.acb_add://添加数据
                 addData();
+//                asyncAddData();
                 break;
             case R.id.acb_delete://删除数据
 //                deleteData();
@@ -58,6 +59,39 @@ public class LitePalStudyActivity extends AppCompatActivity {
                 queryData();
                 break;
         }
+    }
+
+    /**
+     * 异步添加数据
+     */
+    private void asyncAddData() {
+        final PhoneBean phone = new PhoneBean();
+        phone.setId(1);
+        phone.setName("华为");
+        phone.setBrand("华为 meta9");
+        phone.setPrice(2799);
+        /**
+         *  当一次插入几万条数据，可能会阻塞线程，故此方法可异步操作，最后在回调中回到主线程操作UI
+         */
+        phone.saveAsync().listen(new SaveCallback() {
+            @Override
+            public void onFinish(boolean success) {
+                Toast.makeText(LitePalStudyActivity.this, "异步插入数据成功了！", Toast.LENGTH_LONG).show();
+                actShowDb.setText(phone.toString());
+            }
+        });
+
+//        /**
+//         *  已存在数据库就更新，没有就创建
+//         */
+//        phone.saveOrUpdateAsync().listen(new SaveCallback() {
+//            @Override
+//            public void onFinish(boolean success) {
+//                Toast.makeText(LitePalStudyActivity.this, "插入数据成功了！", Toast.LENGTH_LONG).show();
+//            }
+//        });
+//        phone.saveOrUpdate("name=?", phone.getName());
+        Log.i(TAG, "asyncAddData:\n" + phone.toString());
     }
 
 
@@ -108,15 +142,15 @@ public class LitePalStudyActivity extends AppCompatActivity {
      * 通过判断条件，更新数据
      */
     private void updateDataByCondition() {
+        // 更新满足一定条件的多条记录  将name= 小李子 的 price 改为3000
         PhoneBean phoneBean = new PhoneBean();
-        phoneBean.setId(2);
         phoneBean.setPrice(3000);
-        phoneBean.setName("哈哈哈哈");
-        phoneBean.setBrand("三星");
-        phoneBean.setPrice(2000);
-        //更换名字为 李四 且 手机价格为 3500
-        // TODO: 2018/8/14
-        phoneBean.updateAll("name = ?","李四");
+        phoneBean.updateAll("name = ?", "小李子");
+        //更新指定id的单条记录
+//        PhoneBean phoneBean1 = new PhoneBean();
+//        phoneBean1.setBrand("OPPO Rs11");
+//        phoneBean1.update(10);
+        //更新全部数据
 //        phoneBean.updateAll();
         //异步更新数据
 //        phoneBean.updateAllAsync("name= ? and price = ?","小米mix", "3999")
@@ -155,39 +189,18 @@ public class LitePalStudyActivity extends AppCompatActivity {
     }
 
     private void addData() {
-        PhoneBean phone = new PhoneBean();
+        final PhoneBean phone = new PhoneBean();
         phone.setId(1);
         phone.setName("小李子");
         phone.setBrand("华为");
         phone.setPrice(2799);
-        phone.save();//在主线程中插入数据
-        //判断数据是否存储成功
+//        phone.save();//在主线程中插入数据
+//        //判断数据是否存储成功
         if (phone.save()) {
             Toast.makeText(LitePalStudyActivity.this, " phone 存储成功", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(LitePalStudyActivity.this, " phone 存储失败", Toast.LENGTH_SHORT).show();
         }
         Log.i(TAG, "addData:\n" + phone.toString());
-
-//        /**
-//         *  当一次插入几万条数据，可能会阻塞线程，故此方法可异步操作，最后在回调中回到主线程操作UI
-//         */
-//        phone.saveAsync().listen(new SaveCallback() {
-//            @Override
-//            public void onFinish(boolean success) {
-//                Toast.makeText(LitePalStudyActivity.this, "插入数据成功了！", Toast.LENGTH_LONG).show();
-//            }
-//        });
-//
-//        /**
-//         *  已存在数据库就更新，没有就创建
-//         */
-//        phone.saveOrUpdateAsync().listen(new SaveCallback() {
-//            @Override
-//            public void onFinish(boolean success) {
-//                Toast.makeText(LitePalStudyActivity.this, "插入数据成功了！", Toast.LENGTH_LONG).show();
-//            }
-//        });
-//        phone.saveOrUpdate("name=?", phone.getName());
     }
 }
