@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Carson</title>
+    <script>
+
+            <!--方式二      start    -->
+            function callAndroidTwo()
+            {
+            <!--约定的url协议为：js://webview?arg1=111&arg2=222-->
+            document.location = "js://webview?arg1=111&arg2=222";
+            }
+
+
+    </script>
+</head>
+<body>
+<!-- 点击按钮则调用callAndroidTwo函数 -->
+<br><br><br><br>
+<button type="button" style="height:30px;width:120px;" onclick="callAndroidTwo()">
+Js调用Android代码 方式二
+</button>
+</body>
+</html>

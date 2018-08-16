@@ -157,13 +157,25 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/Album.AppTheme">
-<!--            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            <!--            <intent-filter>
+                            <action android:name="android.intent.action.MAIN" />
+                            <category android:name="android.intent.category.LAUNCHER" />
+                        </intent-filter>-->
         </activity>
         <!-- LitePal 数据库-->
-        <activity android:name=".litepal.LitePalStudyActivity"
+        <activity
+            android:name=".litepal.LitePalStudyActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Album.AppTheme">
+            <!--            <intent-filter>
+                            <action android:name="android.intent.action.MAIN" />
+                            <category android:name="android.intent.category.LAUNCHER" />
+                        </intent-filter>-->
+        </activity>
+        <!-- webview 与 Js 交互-->
+        <activity
+            android:name=".webview_js.WebviewAndJsDemoActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/Album.AppTheme">
@@ -172,6 +184,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--Js 调 Android 方式 一 -->
+        <activity
+            android:name=".webview_js.JsToAndroidActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Album.AppTheme"></activity>
+        <!--Js 调 Android 方式 二 -->
+        <activity android:name=".webview_js.JsToAndroidTwoActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Album.AppTheme"></activity>
+        <!--Js 调 Android 方式 三  -->
+        <activity android:name=".webview_js.JsToAndroidThreeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Album.AppTheme"></activity>
     </application>
 
 </manifest>
