@@ -1,10 +1,10 @@
 package angqin.myapplication.webview_js;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.webkit.JsPromptResult;
 import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
@@ -15,8 +15,10 @@ import java.util.HashMap;
 import java.util.Set;
 
 import angqin.myapplication.R;
+import angqin.myapplication.webview_js.webviewjavascriptbridge.JsBridgeSimpleActivity;
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by ${lixuebin} on 2018/8/16.
@@ -87,5 +89,10 @@ public class JsToAndroidThreeActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @OnClick(R.id.btn_to_android)
+    public void onViewClicked() {
+        startActivity(new Intent(JsToAndroidThreeActivity.this, JsBridgeSimpleActivity.class));
     }
 }

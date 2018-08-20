@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="js 调用 android 方式 "
+        android:text="三方库 jsbridge 实现 android 与 js 交互 "
         android:textAllCaps="false"
-        android:visibility="gone"/>
+        android:visibility="visible"/>
 </LinearLayout>

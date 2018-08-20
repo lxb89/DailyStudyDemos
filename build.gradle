@@ -24,6 +24,11 @@ allprojects {
         maven {
             url 'https://maven.google.com/'
             name 'Google'
+
+        }
+        //jsbirdge
+        maven {
+            url "https://jitpack.io"
         }
     }
 }

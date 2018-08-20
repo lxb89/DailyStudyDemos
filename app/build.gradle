@@ -48,6 +48,8 @@ dependencies {
     compile 'com.android.support:gridlayout-v7:22.+'
     // LitePal 三方数据库
     implementation 'org.litepal.android:core:2.0.0'
+    // jsbridge
+    compile 'com.github.lzyzsd:jsbridge:1.0.4'
 
 
 
