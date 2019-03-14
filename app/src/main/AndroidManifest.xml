@@ -107,7 +107,7 @@
             android:name=".enum_study.EnumTestActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/Album.AppTheme">
+            android:theme="@style/AppTheme">
             <!--<intent-filter>-->
             <!--<action android:name="android.intent.action.MAIN" />-->
             <!--<category android:name="android.intent.category.LAUNCHER" />-->
@@ -118,13 +118,13 @@
             android:name=".enum_study.EnumInstanceActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/Album.AppTheme"></activity>
+            android:theme="@style/AppTheme"></activity>
         <!-- 动态代理 研究-->
         <activity
             android:name=".proxy.ProxyTestActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/Album.AppTheme">
+            android:theme="@style/AppTheme">
             <!--                        <intent-filter>
                                         <action android:name="android.intent.action.MAIN" />
                                         <category android:name="android.intent.category.LAUNCHER" />
@@ -145,7 +145,7 @@
             android:name=".decorate.DecorateTestActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/Album.AppTheme">
+            android:theme="@style/AppTheme">
             <!--            <intent-filter>
                             <action android:name="android.intent.action.MAIN" />
                             <category android:name="android.intent.category.LAUNCHER" />
@@ -156,7 +156,7 @@
             android:name=".mvp_sample.MvpSampleActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/Album.AppTheme">
+            android:theme="@style/AppTheme">
             <!--            <intent-filter>
                             <action android:name="android.intent.action.MAIN" />
                             <category android:name="android.intent.category.LAUNCHER" />
@@ -167,7 +167,7 @@
             android:name=".litepal.LitePalStudyActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/Album.AppTheme">
+            android:theme="@style/AppTheme">
             <!--            <intent-filter>
                             <action android:name="android.intent.action.MAIN" />
                             <category android:name="android.intent.category.LAUNCHER" />
@@ -178,33 +178,74 @@
             android:name=".webview_js.WebviewAndJsDemoActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/Album.AppTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:theme="@style/AppTheme">
+            <!--            <intent-filter>
+                            <action android:name="android.intent.action.MAIN" />
+                            <category android:name="android.intent.category.LAUNCHER" />
+                        </intent-filter>-->
         </activity>
         <!--Js 调 Android 方式 一 -->
         <activity
             android:name=".webview_js.JsToAndroidActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/Album.AppTheme"></activity>
+            android:theme="@style/AppTheme"></activity>
         <!--Js 调 Android 方式 二 -->
-        <activity android:name=".webview_js.JsToAndroidTwoActivity"
+        <activity
+            android:name=".webview_js.JsToAndroidTwoActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/Album.AppTheme"></activity>
+            android:theme="@style/AppTheme"></activity>
         <!--Js 调 Android 方式 三  -->
-        <activity android:name=".webview_js.JsToAndroidThreeActivity"
+        <activity
+            android:name=".webview_js.JsToAndroidThreeActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/Album.AppTheme"></activity>
+            android:theme="@style/AppTheme">
+                        <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <!--利用三方库实现 js 与 android 交互-->
-        <activity android:name=".webview_js.webviewjavascriptbridge.JsBridgeSimpleActivity"
+        <activity
+            android:name=".webview_js.webviewjavascriptbridge.JsBridgeSimpleActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/Album.AppTheme"></activity>
+            android:theme="@style/AppTheme"></activity>
+        <!--DataBinding 学习-->
+        <activity
+            android:name=".databinding.DataBindingMainAty"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <!--            <intent-filter>
+                            <action android:name="android.intent.action.MAIN" />
+                            <category android:name="android.intent.category.LAUNCHER" />
+                        </intent-filter>-->
+        </activity>
+        <activity
+            android:name=".databinding.DataBindingTestOneAty"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".databinding.DataBindingTestTwoAty"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".databinding.DataBindingTestThreeAty"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"></activity>
+        <!-- mvvm demo-->
+        <activity
+            android:name=".mvvm.view.MvvmSampleAty"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+<!--            &lt;!&ndash;<intent-filter>&ndash;&gt;
+                &lt;!&ndash;<action android:name="android.intent.action.MAIN" />&ndash;&gt;
+                &lt;!&ndash;<category android:name="android.intent.category.LAUNCHER" />&ndash;&gt;
+            &lt;!&ndash;</intent-filter>-->-->
+        </activity>
     </application>
 
 </manifest>

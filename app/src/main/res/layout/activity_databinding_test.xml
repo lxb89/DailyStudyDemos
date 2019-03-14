@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <!-- 引入一些高级变量Variables  -->
+        <import type="java.util.List"/>
+        <import type="java.util.Map"/>
+        <import type="angqin.myapplication.databinding.bean.UserBean" alias="UserBean2"/>
+        <import type="angqin.myapplication.databinding.UserBean"/>
+
+        <!--自定义对象-->
+        <variable
+            name="user"
+            type="UserBean"/>
+
+        <!--集合-->
+        <variable
+            name="list"
+            type="List&lt;String&gt;"/>
+
+        <variable
+            name="map"
+            type="Map&lt;String,Object&gt;"/>
+        <!--数组-->
+        <variable
+            name="array"
+            type="String[]"/>
+        <!--设置别名-->
+        <variable
+            name="user2"
+            type="UserBean2"/>
+        <!-- 事件处理-->
+        <variable
+            name="handler"
+            type="angqin.myapplication.databinding.OnClickHandler"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <!--名字-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{user.lastName != null ? user.lastName : user.displayName}"
+            android:textSize="16sp" />
+        <!--年龄-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:text="@{String.valueOf(user.age)}"
+            android:textSize="16sp" />
+
+        <!--引入一些高级变量Variables-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:text="@{list.get(1)}"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:text="@{map.get(`key0`)}"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:text="@{array[2]}"
+            android:textSize="16sp" />
+        <!-- 设置别名区分-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{user2.lastName}"
+            android:textSize="16sp" />
+
+        <!-- 在 include 中使用-->
+        <include layout="@layout/name"
+            app:user="@{user}" />
+
+        <!--databinding 事件处理-->
+        <!-- 函数调用也可以使用 `.` handler.onClickFriend  这种调用已弃用-->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="点我"
+            android:onClick="@{handler::onClickFriend}"/>
+        <!--BindingAdapter注解设置自定义属性-->
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="@dimen/album_dp_15"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{user.picUrl}" />
+
+    </LinearLayout>
+
+</layout>

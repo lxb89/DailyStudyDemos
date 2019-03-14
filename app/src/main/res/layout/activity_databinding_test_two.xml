@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="doubleBindBean"
+            type="angqin.myapplication.databinding.bean.DoubleBindBean" />
+        <variable
+            name="doubleBindBean2"
+            type="angqin.myapplication.databinding.bean.DoubleBindBean2"/>
+
+        <!--也支持集合  ObservableArrayList  ObservableArrayMap-->
+        <variable
+            name="list"
+            type="android.databinding.ObservableArrayList&lt;String&gt;"/>
+        <variable
+            name="map"
+            type="android.databinding.ObservableArrayMap&lt;String,Object&gt;"/>
+
+        <variable
+            name="onClickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/album_dp_15">
+        <!--BaseObservable-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{doubleBindBean.content}"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_exchange_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{onClickListener}"
+            android:text="BaseObservable方式 更新内容"
+            android:textAllCaps="false" />
+        <!--ObservableField-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{doubleBindBean2.observableField}"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_exchange_content_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{onClickListener}"
+            android:text="ObservableField方式 更新内容"
+            android:textAllCaps="false" />
+        <!-- Observable Collections -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{list[0]}"
+            android:textSize="16sp" />
+        <Button
+            android:id="@+id/btn_exchange_content_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{onClickListener}"
+            android:text="ObservableArrayList方式 更新内容"
+            android:textAllCaps="false" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{map[`key0`]}"
+            android:textSize="16sp" />
+        <Button
+            android:id="@+id/btn_exchange_content_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{onClickListener}"
+            android:text="ObservableArrayMap方式 更新内容"
+            android:textAllCaps="false" />
+        <!--View with ID-->
+        <TextView
+            android:id="@+id/tv_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/album_dp_15"
+            android:text=""
+            android:textSize="16sp" />
+    </LinearLayout>
+
+
+</layout>

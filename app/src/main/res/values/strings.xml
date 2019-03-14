@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EventBusDemo</string>
+    <string name="app_name">MyApplication</string>
     <string-array name="pageTiTles">
         <item >Module 一</item>
         <item >Module 二</item>

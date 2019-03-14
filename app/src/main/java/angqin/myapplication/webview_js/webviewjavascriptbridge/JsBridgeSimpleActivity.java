@@ -52,12 +52,10 @@ public class JsBridgeSimpleActivity extends AppCompatActivity {
         webView.setWebChromeClient(new WebChromeClient() {
             @Override
             public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
-
                 return super.onJsAlert(view, url, message, result);
             }
         });
-        webView.loadUrl("file:///android_asset/jsbridge.html");
-
+        webView.loadUrl("file:///android_asset/test.html");
         //注册函数，让js 调用
         webView.registerHandler("submitFromWeb", new BridgeHandler() {
             @Override
@@ -76,10 +74,9 @@ public class JsBridgeSimpleActivity extends AppCompatActivity {
 
     @OnClick({R.id.btn_send_message_to_js, R.id.btn_call_js_method})
     public void onViewClicked(View view) {
-        switch (view.getId()) {
+        switch (view.getId()){
             case R.id.btn_send_message_to_js: //发消息给js
                 mJavaSendToMessage();
-
                 break;
             case R.id.btn_call_js_method: //java 调用js 方法
                 mJavaCallJs();
