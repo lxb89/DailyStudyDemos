@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import angqin.myapplication.R;
+import angqin.myapplication.databinding.ItemGrilsBinding;
+import angqin.myapplication.databinding.ItemTitleBinding;
 import angqin.myapplication.databinding.base.BaseBindRecyclerViewAdapter;
 import angqin.myapplication.databinding.bean.GirlsItem;
 import angqin.myapplication.databinding.bean.TitleItem;
@@ -28,13 +30,13 @@ public class MultiItemAdapter extends BaseBindRecyclerViewAdapter<IBaseBindingAd
     protected RecyclerView.ViewHolder onCreateMyViewHolder(ViewGroup parent, int viewType) {
         switch (viewType) {
             case R.layout.item_grils:
-                angqin.myapplication.databinding.ItemGrilsBinding itemGrilsBinding = DataBindingUtil.inflate(inflater, R.layout.item_grils, parent, false);
+                ItemGrilsBinding itemGrilsBinding = DataBindingUtil.inflate(inflater, R.layout.item_grils, parent, false);
                 return new GrilsViewHolder(itemGrilsBinding);
             case R.layout.item_title:
-                angqin.myapplication.databinding.ItemTitleBinding itemTextBinding = DataBindingUtil.inflate(inflater, R.layout.item_title, parent, false);
+                ItemTitleBinding itemTextBinding = DataBindingUtil.inflate(inflater, R.layout.item_title, parent, false);
                 return new TitleViewHolder(itemTextBinding);
             default:
-                angqin.myapplication.databinding.ItemGrilsBinding binding = DataBindingUtil.inflate(inflater, R.layout.item_grils, parent, false);
+                ItemGrilsBinding binding = DataBindingUtil.inflate(inflater, R.layout.item_grils, parent, false);
                 return new GrilsViewHolder(binding);
         }
     }
@@ -59,26 +61,26 @@ public class MultiItemAdapter extends BaseBindRecyclerViewAdapter<IBaseBindingAd
 
 
     class GrilsViewHolder extends RecyclerView.ViewHolder {
-        private angqin.myapplication.databinding.ItemGrilsBinding binding;
+        private ItemGrilsBinding binding;
 
-        public angqin.myapplication.databinding.ItemGrilsBinding getBinding() {
+        public ItemGrilsBinding getBinding() {
             return binding;
         }
 
-        public GrilsViewHolder(angqin.myapplication.databinding.ItemGrilsBinding binding) {
+        public GrilsViewHolder(ItemGrilsBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }
     }
 
     class TitleViewHolder extends RecyclerView.ViewHolder {
-        private angqin.myapplication.databinding.ItemTitleBinding binding;
+        private ItemTitleBinding binding;
 
-        public angqin.myapplication.databinding.ItemTitleBinding getBinding() {
+        public ItemTitleBinding getBinding() {
             return binding;
         }
 
-        public TitleViewHolder(angqin.myapplication.databinding.ItemTitleBinding binding) {
+        public TitleViewHolder(ItemTitleBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }

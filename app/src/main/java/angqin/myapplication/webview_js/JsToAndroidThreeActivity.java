@@ -1,15 +1,23 @@
 package angqin.myapplication.webview_js;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.webkit.JsPromptResult;
 import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.FrameLayout;
 
 import java.util.HashMap;
 import java.util.Set;
@@ -38,7 +46,6 @@ public class JsToAndroidThreeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_js_to_android_three);
         ButterKnife.bind(this);
         initView();
-
     }
 
     private void initView() {

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 import org.litepal.LitePal;
@@ -185,7 +186,7 @@ public class LitePalStudyActivity extends AppCompatActivity {
 //                    }
 //                });
         List<PhoneBean> phoneBeans = LitePal.findAll(PhoneBean.class);
-        Log.i(TAG, "  deleteData price < 2800 查询数据:\n" + phoneBeans.toString());
+        Log.i(TAG, "deleteData price < 2800 查询数据:\n" + phoneBeans.toString());
     }
 
     private void addData() {

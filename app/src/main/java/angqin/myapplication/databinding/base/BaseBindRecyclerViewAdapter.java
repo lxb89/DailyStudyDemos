@@ -8,8 +8,6 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-import angqin.myapplication.databinding.ItemGrilsBinding;
-import angqin.myapplication.databinding.ItemTitleBinding;
 
 /**
  * Created by ${lixuebin} on 2018/8/22.

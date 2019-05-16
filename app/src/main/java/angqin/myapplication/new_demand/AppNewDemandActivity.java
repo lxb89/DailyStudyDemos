@@ -138,6 +138,7 @@ public class AppNewDemandActivity extends AppCompatActivity {
             Map<String, Object> map = new HashMap<String, Object>();
             map.put("num", number);
             map.put("mess", body);
+            map.put("name", name);
             list.add(map);
         }
     }

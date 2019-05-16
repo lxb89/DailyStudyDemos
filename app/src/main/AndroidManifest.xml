@@ -136,7 +136,7 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/Album.AppTheme">
-            <!--            <intent-filter>
+  <!--                      <intent-filter>
                             <action android:name="android.intent.action.MAIN" />
                             <category android:name="android.intent.category.LAUNCHER" />
                         </intent-filter>-->
@@ -202,10 +202,10 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
-                        <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!--        <intent-filter>
+                            <action android:name="android.intent.action.MAIN" />
+                            <category android:name="android.intent.category.LAUNCHER" />
+                        </intent-filter>-->
         </activity>
         <!--利用三方库实现 js 与 android 交互-->
         <activity
@@ -240,12 +240,21 @@
         <activity
             android:name=".mvvm.view.MvvmSampleAty"
             android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!--自定义组件-->
+        <activity
+            android:name=".custom_view.CustomViewDemoAty"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait">
-<!--            &lt;!&ndash;<intent-filter>&ndash;&gt;
-                &lt;!&ndash;<action android:name="android.intent.action.MAIN" />&ndash;&gt;
-                &lt;!&ndash;<category android:name="android.intent.category.LAUNCHER" />&ndash;&gt;
-            &lt;!&ndash;</intent-filter>-->-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <!--动态绘图-->
+        <activity android:name=".custom_view.PlottingMovingGraphicAty"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

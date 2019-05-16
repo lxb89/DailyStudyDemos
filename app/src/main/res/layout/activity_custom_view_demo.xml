@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <!--canvas paint-->
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <!--绘制位图-->
+    <ImageView
+        android:id="@+id/iv_bitmap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+        <!--绘制点-->
+        <ImageView
+            android:id="@+id/iv_point"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <!--绘制线-->
+        <ImageView
+            android:id="@+id/iv_line"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <!--绘制矩形-->
+        <ImageView
+            android:id="@+id/ivRect"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <!--绘制弧线-->
+        <ImageView
+            android:id="@+id/ivArc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <!--扇形-->
+        <ImageView
+            android:id="@+id/ivSector"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <!--绘制不规则图形 五角星-->
+        <ImageView
+            android:id="@+id/ivStar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <!--绘制path-->
+        <ImageView
+            android:id="@+id/ivPath"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <!--Bezier-->
+        <ImageView
+            android:id="@+id/ivBezier"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <!--多path-->
+        <ImageView
+            android:id="@+id/iv_pathMore"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <!--绘制文字-->
+        <ImageView
+            android:id="@+id/ivText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/acb_movingGraph"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="绘图实现动态效果"/>
+
+    </LinearLayout>
+</ScrollView>
